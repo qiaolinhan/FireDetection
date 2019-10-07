@@ -26,7 +26,6 @@ Tensorflow 架构包括：C++， Python的前端接口； Core Tensorflow Execut
     plt.show()
 
 ###### Tensorflow工作流图
-节点 Operation
     import tensorflow as tf
     a=tf.constant(5,name="input_a") #define the operation a, create the constant operation , output t connected operations
     b=tf.constant(3,name="input_b") #define the operation b, create the constant operation, output to connected operations
