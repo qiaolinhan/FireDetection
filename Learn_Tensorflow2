@@ -1,0 +1,16 @@
+#####Tensor representation and classes, shapes, calculation
+The input opertion turned from receiving scalars into receiving vectors
+*.ruduce_prod() create the product operation
+*.reduce_sum() create the sum operation
+```python
+import tensorflow as tf
+a = tf.constant([[[1,2,3],[4,5,6]],[[7,8,9],[1,2,3]]], name="input_a")
+b = tf.reduce_prod(a, name="prod_b")#定义节点b，创建归约乘积Op,接收一个N维张量输入,输出张量所有分量(元素)的乘积,以prod_b标识。
+c = tf.reduce_sum(a, name="sum_c")#定义节点c，创建归约求和Op,接接收一个N维张量输入,输出张量所有分量(元素)的求和,以sum_c标识。
+d = tf.add(b,c, name="add_d")
+sess = tf.Session()
+out = sess.run(d)
+writer = tf.summary.FileWriter('./my_graph', sess.graph)
+writer.close()
+sess.close()
+```
