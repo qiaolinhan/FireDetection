@@ -1,7 +1,7 @@
 ##### Tensor representation and classes, shapes, calculation
 The input opertion turned from receiving scalars into receiving vectors
-*.ruduce_prod() create the product operation
-*.reduce_sum() create the sum operation
+* .ruduce_prod() create the product operation
+* .reduce_sum() create the sum operation
 
 ######  
 ```python
