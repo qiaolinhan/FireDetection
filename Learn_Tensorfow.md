@@ -3,6 +3,7 @@ Tensorflow 架构包括：C++， Python的前端接口； Core Tensorflow Execut
 
 # Setup Tensorflow
 2 classical environment needed: Jupyter(ipython) Notebook, matplotlib.
-#####setup in Virtulenv:
+
+##### setup in Virtulenv:
   sudo easy_install pip sudo pip install --upgrade virtualenv
 
