@@ -24,6 +24,7 @@ Tensorflow 架构包括：C++， Python的前端接口； Core Tensorflow Execut
     x,y=out
     plt.scatter(x,y)
     plt.show()
+ 
 
 ###### Tensorflow工作流图
     import tensorflow as tf
