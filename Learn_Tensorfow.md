@@ -37,3 +37,6 @@ Tensorflow 架构包括：C++， Python的前端接口； Core Tensorflow Execut
     writer=tf.summary.FileWriter('./my_graph',sess.graph) #create and start the object of Summary.FileWriter, 2 parameters needed: tensorboard image save path; property of sess.graph
     writer.close() #shut down the summary.FileWriter object
     sess.close() #shut down the Session object
+After run this python code
+ cmd 'tensorboard --logdir="my_graph"'
+Chrome '://0.0.0.0:6006'
