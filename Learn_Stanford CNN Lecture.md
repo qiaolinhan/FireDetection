@@ -39,7 +39,7 @@ def predict(model,test_images):
 ```
 function change from 1 to 2-->'this is cat' to train and prediction.  
 
-* Nearest Neighbor
+#### Nearest Neighbor (NEVER USED <-- slow at test, distance calculation not very well)
   train: memmorize all data and labels  
   predict: predict the label of the most similar training image  
   example: example dataset: CIFAR10 for machine learing. 10 classes, 50000 training images, 10000 testing images.
@@ -74,19 +74,31 @@ class NearestNeighbor:
     min_index=np.argmin(distance) #predict the label of the nearest example
   return Ypred
 ```
-  Q: With N examples, how fast the trainning and prediction could be?
+  Q: With N examples, how fast the trainning and prediction could be?  
   A: Train O(1), predict O(N)  
      BAD, we want classifier FAST at prediction; SLOW for training is okay.  not good on mobile.
   * K-Nearest Neighbor, instead of copying from nearest neighbor, take majority vote from K closest points.
   K-Nearst Neighbors use DISTANCE METRIC to compare images (L2)  
   L1 (Manhattan) distance--square $ d_1(I_1,I_2)=\sum_{p}|I_1^p-I_2^p| $  
   L2 (Euclidean) distance --circle $ d_2(I_1,I_2)=\sqrt{\sum_{p}(I_1^p-I_2^p)^2} $  
+  * L1 distance depends on the choice of coordinates system
+  * L2 distance doesn't matter with different coordinates.  
+  Q: The best value of K and the best distance to use?
+  A: These arer hyperparameters: choices about the algorithm that we set rather than learn. `Ther is not way to learn them directly from the data.`  
+  IMPORTANT: seperate the validation data and the test data.
+  * Cross Validation--> stratagy for setting hyperparameters, get more robust hyperparameters.  
+  Eg: 5-folds cross validation for value of K in K-nearest heighbor classifier. _Seems that K~=7 works best)
   
-        
-  
-  
+* When working with machine learing, end with the plot that contains the information of `ACCURACY`,`PERFORMANCE OF YOUR HYPERPARAMETERS`.
 
+* Curse of dimentionality
+  Dimentions=1, Points=4
+  Dimention=2, Points=$4^2$
+  Dimention=3, Points=$4^3$
   
-    
-  
-
+* So, for the K-Nearest Neighbors:
+  In image classification, start with trainig set of iages and lables and must predict labels on the test set.  
+  K-Nearest Neighbors classifier predicts labels based on the nearest trainig examples.  
+  Distance metric and K are hyperparameters.  
+  Choose hyperparameters using the validation set; only run on test set ONCE at the very end!  
+ 
