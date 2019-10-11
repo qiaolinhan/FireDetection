@@ -44,7 +44,7 @@ function change from 1 to 2-->'this is cat' to train and prediction.
   predict: predict the label of the most similar training image  
   example: example dataset: CIFAR10 for machine learing. 10 classes, 50000 training images, 10000 testing images.
   Q: How to compare images?
-  A: L1 distance: $d_1(I_1,I_2)=\sum_{p}|I1^P-I_2^P|$
+  A: L1 distance: $ d_1(I_1,I_2)=\sum_{p}|I1^P-I_2^P| $
   
     
   
