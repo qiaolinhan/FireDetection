@@ -45,7 +45,7 @@ function change from 1 to 2-->'this is cat' to train and prediction.
   example: example dataset: CIFAR10 for machine learing. 10 classes, 50000 training images, 10000 testing images.
   Q: How to compare images?
   A: L1 distance: 
-     <img src="http://www.forkosh.com/mathtex.cgi? d_1(I_1,I_2)=\sum_{p} |I1^P-I_2^P|">  
+     <img src="http://www.forkosh.com/mathtex.cgi? d_1(I_1,I_2)=\sum_{p}|I1^P-I_2^P|">  
   also
     
   
