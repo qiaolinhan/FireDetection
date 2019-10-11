@@ -101,4 +101,18 @@ class NearestNeighbor:
   K-Nearest Neighbors classifier predicts labels based on the nearest trainig examples.  
   Distance metric and K are hyperparameters.  
   Choose hyperparameters using the validation set; only run on test set ONCE at the very end!  
- 
+
+#### Linear Classification
+Linear classifier  
+CIFAR10: 50000 training images 32*32*3 (3 color channels)
+Parametric model, two different components  
+image-->_f(x,W)_-->10 numbers giving class scores.  
+W: parameters or weights.  
+
+* Deeplearning-->the right structure of function F, the simplest way is to multiply W and x. _f(x,W)_=W*x.  
+
+Eg: image with 4 pixels and 3 classes  
+Problem: The linear classfier is just learning tamplate for each class
+* Loss function--> Quantifying wht it means to have good W.
+* Optimizatin--> start with random W and find W that minimizes the loss.
+* ConvNets --> Tweak the functional form of _f_.
