@@ -139,11 +139,18 @@ while True:
  Q: Why stochastic
  A: It uses small minibatch to compute an estimate of the full sum and an estimate of the true gradient, `it can be viewed as a Monte Carlo estimate of some expectation of the true value.`
  
- 
-
-
-
-
-
-
-  
+##### Image Fratures
+* Linear classifier: Maybe just taking raw image pixels and then feeding the raw pixelsthemselves
+* Two stage approach: take image, compute various feature representations of the image.
+###### Motivation
+Cannot separate with linear classifier $ \rightarrow f(x,y)=(r(x,y),\theta(x,y)) $ After applying feature transform, points can be separated  
+common feature vectors:
+* Color Histogram `simple feature vector`
+* Histogram of Oriented Gradients (HoG)--Hubel and Wiesel found these oriented edges---edges  
+Eg: Bag of Words  
+    Step1: Build Codebook: atches-->Cluster patches to form "codebook" of "visual words".
+    Step2: Encode Images
+    
+###### Image features vs ConvNet
+Image-->Extraction-->f-->10 numbers giving scores for classes-->trainig-->Feature Extraction
+Image-->ConvNet-->10 numbers giving scores for calsses-->training-->ConvNet
