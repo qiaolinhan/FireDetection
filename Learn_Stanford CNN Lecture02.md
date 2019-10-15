@@ -109,7 +109,9 @@ In 1-dimention, the derivative of the function:
 $ \frac{df(x)}{dx}=\lim\underset{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} $  
 In multiple dimentions, the gradient is the vector of (partial derivatives) along each dimention.  
 The slope in any direction is the #dot product# of the direction with the gradient.  
-The direction of steepest decent is the #negtive gradient#.  
+The direction of steepest decent is the #negtive gradient#.
+* Use calculus to compute an analytic gradient  
+
 
 
 
