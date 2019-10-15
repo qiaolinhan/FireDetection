@@ -3,9 +3,9 @@ Backpropagation and Neural Networks
 
 #### Recall
 * score: $ s=f(x;W)=Wx $  
-* SVM loss: $ L_i=\sum_{j\neqy_i}max(0,s_j-s_{y_i}+1) $  
+* SVM loss: $ L_i=\sum_{j\neq y_i}max(0,s_j-s_{y_i}+1) $  
 * data loss+ regularization: $ L=\frac{1}{N}\sum_{i=1}{N}Li+\sum_kW_k^2 $  
-we want $ \triangledown _WL $, we want to find the parameters _W_.  
+we want $ \bigtriangledown_WL $, we want to find the parameters _W_.  
 
 ###### Gradient Decent
 $ df(x)/dx=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} $  
