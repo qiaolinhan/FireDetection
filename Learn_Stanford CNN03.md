@@ -22,8 +22,9 @@ $ L={\frac{1}{n} \sum_{i}L_i(f(x_i,W),y_i)} $
 It is a generalization of SVM to handle multiple classes.
 Given an example $(x_i,y_i)$ where $ x_i $ is the image and where $ y_i $ is the lable (integer), and using the shorthand for the score vector: $ s=f(x_i,W) $  
 The SVM loss has the form:
-$$ L_i=\sum_{j\neq y_i} {0\enspace if s_{y_i}\geq s_j+1 \\ s_j-s_{y_i}+1\enspace otherwise} $$
-$$ =\sum_{j\neq y_i}max（0，s_j-s_{y_i}+1) $$  
+$$ L_i=\sum_{j\neq y_i} {0\ \if s_{y_i}\geq s_j+1 
+                         s_j-s_{y_i}+1\ \otherwise}
+      =\sum_{j\neq y_i}max（0，s_j-s_{y_i}+1) $$  
 Where $ s $ is the  predict score, $ s_{y_i} $ is the score of true class.
 * Hinge loss $ \uparrow $
 * Only concern about the different scores 
@@ -31,7 +32,7 @@ Where $ s $ is the  predict score, $ s_{y_i} $ is the score of true class.
 * squared loss: mistake will be very very bad!
 * hinge loss: we don't actually care between being a little wrong and being a lot wrong.
 $ L_i=\sum_{j\neq y_i}max(0,s_j-s_{y_i}+1) $
-```
+```python
 #nulticlass SVM Loss
 import numpy
 def L_i_vectorized(x,y,W):
@@ -71,7 +72,7 @@ unnormalized log probabilities $ \rightarrow (exp) $ unmormalzied Probabilities 
 - We have some dataset of (x,y)  
 - We have a #socre function#: $ s=f(x;W)\overset{e.g.} Wx $  
 - We have a #loss function#: 
-  1. softmax: $ L_i=-log(\frac{{e^s}y_i}{\sum_j e^{s_j}) $  
+  1. softmax: $ L_i=-log(\frac{{e^s}y_i}{\sum_{j} e^{s_j}) $  
   2. SVM: $ L_i=\sum_{j\neq y_i} \max (0,s_j-s_{y_i}+1) $  
   3. Full loss: $ L=\frac{1}{N} \sum_{i=1}^{N}L_i+R(W) $  
 
@@ -80,7 +81,7 @@ A: Optimization
 
 #### Optimization
 #1. Random search (bad idea solution)#
-```
+```python
 import numpy as np
 # assume X_train is the data where each column is an example
 # assum Y_train are the labels
