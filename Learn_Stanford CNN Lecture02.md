@@ -50,7 +50,7 @@ $ L(W)=\frac{1}{N}\sum_{i=1}^{N}L_i(f(x_i,W),y_i)+\lambda R(W) $
 
 $ \lambda $ =regularization strength (hyperparameter)
 ###### Common Use Regularization
-* #$ L2 regularization: $ R(W)=\sum_{k}\sum_{l}W_{k,l}^2 $#  
+* #L2 regularization#: $ R(W)=\sum_{k}\sum_{l}W_{k,l}^2 $
 * L1 regularization: $ R(W)=\sum_{k}\sum_{l}|W_{k,l}| $ (encouraging sparity in the matrix W)
 * Elastic net (L1+L2) $ R(W)=\sum_k\sum_l\beta W_{k,l}^2+|W_{k,,l}| $   (ML DL)
 * Max norm regularization
@@ -58,7 +58,13 @@ $ \lambda $ =regularization strength (hyperparameter)
 * Fancier: Batch normalization, stochaastic depth
 
 * Popular in DL: Softmax Classifier (MUltinomial Logistic Regression), there score have meaining: Unnormalized log probabilities of the class  
-$ P(Y=k|X=x_i)=\frac{e^s_k}{\sum_je^{s_j}} $ where $ s=f(x_i;W) $
+$ P(Y=k|X=x_i)=\frac{e^s_k}{\sum_je^{s_j}} $ where $ s=f(x_i;W) $  
+$ \frac{{e^s}_k}{\sum_j e^{s_j}} $ is called softmax function. 
+We Want to maximize the log liklihood, or (for a lossfunction) to minimmize the negative log likelihood of the correct class: $ L_i=-logP(Y=y_i|X=x_i) $  
+* `loss funtion measures bad not good.`
+unnormalized log probabilities $ \rightarrow (exp) $ unmormalzied Probabilities $ \rightarrow (normalize) $ probalilities $ L_i=-log(probabilities) $
+* In summary $ L_i=-log(\frac{e^sy_i}{\sum_j {e^s}_j}) $
+  
 
 
 
