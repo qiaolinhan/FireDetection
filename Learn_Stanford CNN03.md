@@ -72,7 +72,7 @@ unnormalized log probabilities $ \rightarrow (exp) $ unmormalzied Probabilities 
 - We have some dataset of (x,y)  
 - We have a #socre function#: $ s=f(x;W)\overset{e.g.} Wx $  
 - We have a #loss function#: 
-  1. softmax: $ L_i=-log(\frac{{e^s}y_i}{\sum_{j} e^{s_j}) $  
+  1. softmax: $ L_i=-log(\frac{e^sy_i}{\sum_{j} e^{s_j}) $  
   2. SVM: $ L_i=\sum_{j\neq y_i} \max (0,s_j-s_{y_i}+1) $  
   3. Full loss: $ L=\frac{1}{N} \sum_{i=1}^{N}L_i+R(W) $  
 
@@ -107,7 +107,7 @@ np.mean(Yte_predict==Yte)
 
 #2. Follow the slope (can be used to train NN and others)#
 In 1-dimention, the derivative of the function:
-$ \frac{df(x)}{dx}=\lim\underset{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} $  
+$ \frac{df(x)}{dx}=\lim\underset{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} $  
 In multiple dimentions, the gradient is the vector of (partial derivatives) along each dimention.  
 The slope in any direction is the #dot product# of the direction with the gradient.  
 The direction of steepest decent is the #negtive gradient#.
