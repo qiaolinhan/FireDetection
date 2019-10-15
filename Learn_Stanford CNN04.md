@@ -22,13 +22,18 @@ $ L=\sum{L_i}+R(W) $
 
 Eg: $ f(x,y,z)=(x+y)z
       q=x+y, f=qz,  
-      \partial q/\partial x, \partial q/\partial y   
-      \partial f/\partial q=z  
-      \partial f/\partial z=q $  
-      We want $ \partial f/\partial x,\partial f/\partial y,\partial f/\partial z $  
+      \frac{\partial q}{\partial x},\frac{\partial q}{\partial y}   
+      \frac{\partial f}{\partial q}=z, \frac{\partial f}{\partial z}=q $  
+      We want $ \frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z} $  
       * chain rule: $ \partial f/\partial y=\frac{\partial f}{\partial q}\frac{\partial q}{\partial y} $  
       
  
-Local gradient---$\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} $  
+Local gradient---$ \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} $  
+gradients---$ \frac{\partial L}{\partial z} $  
+Use the chain rule we can compute $ \frac{\partial L}{\partial x} and \frac{\partial L}{\partial y} $  
+
+Eg: $ f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}   
+      e^x-->e^x; ax-->a; 1/x-->-1/x^2; x+a-->1  
+      \delta(x)=\frac{1}{1+e^{-x}}---sigmoid $
 
             
