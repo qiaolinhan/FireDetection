@@ -110,7 +110,36 @@ $ \frac{df(x)}{dx}=\lim\underset{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} $
 In multiple dimentions, the gradient is the vector of (partial derivatives) along each dimention.  
 The slope in any direction is the #dot product# of the direction with the gradient.  
 The direction of steepest decent is the #negtive gradient#.
-* Use calculus to compute an analytic gradient  
+* Use calculus to compute an analytic gradient 
+
+##### In summary
+- Numerical gradient: approximate, slow, easy to write  
+- Analytic gradient: exact, fast, error-prone
+
+`To practice: Always use analytic gradient, but check implementation with numerical gradient. This is called a _gradient check_.` 
+
+#### Gradient Decent
+```python
+#Vanilla Gradient Decent
+while True:
+  weights_grad=evaluate_gradient(loss_fun,data,weights)
+  weights+=-step_size*weights_grad # perform parameter update
+```
+* Stochastic Gradient Decent (SGD)
+$ L(W)=\frac{1}{N}\sum_{i=1}^{N}L_i(x_i,y_i,W)+\lambda R(W) $  
+Full sum expensive when N is large! ---->super slow when N large!
+$ \triangledown _W L(W)=\frac{1}{N}\sum_{i=1}{N}\triangledown _WL_i(x_i,y_i,W)+\lambda \triangledown _W R(W) $  
+Approximate sum using a minibatch of example (32/64/128 common used)  
+```python
+while True:
+   data_batch=sample_training_data(data,256)
+   weights_grad=evalue_gradient(loss_fun,data_batch,weights)
+   weights+=-step_size*weights_grad #perform parameter update
+ ```
+ Q: Why stochastic
+ A: It uses small minibatch to compute an estimate of the full sum and an estimate of the true gradient, `it can be viewed as a Monte Carlo estimate of some expectation of the true value.`
+ 
+ 
 
 
 
