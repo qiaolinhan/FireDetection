@@ -32,8 +32,8 @@ Local gradient---$ \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} 
 gradients---$ \frac{\partial L}{\partial z} $  
 Use the chain rule we can compute $ \frac{\partial L}{\partial x} and \frac{\partial L}{\partial y} $  
 
-Eg: $ f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}   
-      e^x-->e^x; ax-->a; 1/x-->-1/x^2; x+a-->1  
+Eg: $ f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}\ \   
+      e^x-->e^x; ax-->a; 1/x-->-1/x^2; x+a-->1\ \  
       \delta(x)=\frac{1}{1+e^{-x}}---sigmoid $
 
             
