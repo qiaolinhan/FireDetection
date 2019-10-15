@@ -116,3 +116,4 @@ Problem: The linear classfier is just learning tamplate for each class
 * Loss function--> Quantifying wht it means to have good W.
 * Optimizatin--> start with random W and find W that minimizes the loss.
 * ConvNets --> Tweak the functional form of _f_.
+ 
