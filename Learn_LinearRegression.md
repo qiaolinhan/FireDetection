@@ -136,3 +136,4 @@ with tf.Session() as sess:
     coord.request_stop()
     coord.join(threads)
     sess.close()
+ 
