@@ -8,7 +8,9 @@ Linear Classifier $ f(x,W)=Wx+b $ Outputs the scores.
   * How to actually chosse the W?
   1. Define a loss function that quatifies our unhappiness with the score across the training data.  
   2. Come up with a way of efficiently finding the parameters that minimize the loss function. (*Optimization*)  
-  
+
+
+#### Loss Function and Regularization
 $ f(x,W)=Wx $  
 A *Loss function* tells how good our current classifier is  
 Given a dataset of examples:  
@@ -62,9 +64,54 @@ $ P(Y=k|X=x_i)=\frac{e^s_k}{\sum_je^{s_j}} $ where $ s=f(x_i;W) $
 $ \frac{{e^s}_k}{\sum_j e^{s_j}} $ is called softmax function. 
 We Want to maximize the log liklihood, or (for a lossfunction) to minimmize the negative log likelihood of the correct class: $ L_i=-logP(Y=y_i|X=x_i) $  
 * `loss funtion measures bad not good.`
-unnormalized log probabilities $ \rightarrow (exp) $ unmormalzied Probabilities $ \rightarrow (normalize) $ probalilities $ L_i=-log(probabilities) $
-* In summary $ L_i=-log(\frac{e^sy_i}{\sum_j {e^s}_j}) $
-  
+unnormalized log probabilities $ \rightarrow (exp) $ unmormalzied Probabilities $ \rightarrow (normalize) $ probalilities $ $ \rightarrow $ $ L_i=-log(probabilities) $
+* In summary $ L_i=-log(\frac{e^sy_i}{\sum_j {e^s}_j}) $  
+
+##### Recap
+- We have some dataset of (x,y)  
+- We have a #socre function#: $ s=f(x;W)\overset{e.g.} Wx $  
+- We have a #loss function#: 
+  1. softmax: $ L_i=-log(\frac{{e^s}y_i}{\sum_j e^{s_j}) $  
+  2. SVM: $ L_i=\sum_{j\neq y_i} \max (0,s_j-s_{y_i}+1) $  
+  3. Full loss: $ L=\frac{1}{N} \sum_{i=1}^{N}L_i+R(W) $  
+
+Q: How do we find this W that minimize the loss?
+A: Optimization
+
+#### Optimization
+#1. Random search (bad idea solution)#
+```
+import numpy as np
+# assume X_train is the data where each column is an example
+# assum Y_train are the labels
+# assume the function L evaluates the loss function
+bestloss=float ("inf") #python assigns the highest possible float value
+for num in xrange(1000):
+  W=np.random.randn(10,3073)*0.0001 #generate random parameters
+  loss=L(X_train,Y_train,W) #get the loss over the entire training set
+  if loss<bestloss:
+    bestloss=loss
+    bestW=W
+  print 'in attempt %d the loss was %f, best %f' %(num,loss,bestloss) 
+```
+when test on the test set:
+```
+scores=Wbest.dot(Xte_cols) #10x1000, the class scores for all the test examples
+#find the index with max score in each colum (the predicted class)
+Yte_predict=np.argmax(score,axis=0)
+# and calculate accuracy (fraction of predictions that are correct)
+np.mean(Yte_predict==Yte)
+#return 0.1555
+```
+
+#2. Follow the slope (can be used to train NN and others)#
+In 1-dimention, the derivative of the function:
+$ \frac{df(x)}{dx}=\lim\underset{h\rightarrow 0} \frac{f(x+h)-f(x)}{h} $  
+In multiple dimentions, the gradient is the vector of (partial derivatives) along each dimention.  
+The slope in any direction is the #dot product# of the direction with the gradient.  
+The direction of steepest decent is the #negtive gradient#.  
+
+
 
 
 
