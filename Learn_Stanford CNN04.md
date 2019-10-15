@@ -21,6 +21,14 @@ $ L=\sum{L_i}+R(W) $
 * Advantage: backpropagation can be used (chain rule) to compute the gradient.
 
 Eg: $ f(x,y,z)=(x+y)z
-      q=x+y, f=qz, \partial q/\partial x, \partial q/\partial y 
-      \partial f/\partial q=z
+      q=x+y, f=qz,  
+      \partial q/\partial x, \partial q/\partial y   
+      \partial f/\partial q=z  
       \partial f/\partial z=q $  
+      We want $ \partial f/\partial x,\partial f/\partial y,\partial f/\partial z $  
+      * chain rule: $ \partial f/\partial y=\frac{\partial f}{\partial q}\frac{\partial q}{\partial y} $  
+      
+ 
+Local gradient---$\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} $  
+
+            
