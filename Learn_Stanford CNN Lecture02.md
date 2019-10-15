@@ -43,7 +43,7 @@ def L_i_vectorized(x,y,W):
 $ f(x,W)=Wx $
 $ L=\frac{1}{N} \sum_{i=1}^N \sum_{j\neq {y_i}} max(0,f(x_i;W)_j-f(x_i;W)_{y_i}+1) $
 
-$ L(W)=\frac{1}{N}\sum_{i=1}^{N}L_i(f(x_i,W),y_i)+\lmbda R(W) $  
+$ L(W)=\frac{1}{N}\sum_{i=1}^{N}L_i(f(x_i,W),y_i)+\lambda R(W) $  
 * Data loss: Model predictions should match training data， use the training data to find some classifier. `We only care about the performance on test data`
 * Regularization: Model should be "simple", so it works on test data.  
 * Whole idea: Occam's Razor.  
@@ -56,6 +56,10 @@ $ \lambda $ =regularization strength (hyperparameter)
 * Max norm regularization
 * Dropout
 * Fancier: Batch normalization, stochaastic depth
+
+* Popular in DL: Softmax Classifier (MUltinomial Logistic Regression), there score have meaining: Unnormalized log probabilities of the class  
+$ P(Y=k|X=x_i)=\frac{e^s_k}{\sum_je^{s_j}} $ where $ s=f(x_i;W) $
+
 
 
   
