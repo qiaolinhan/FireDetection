@@ -17,7 +17,7 @@ Given a dataset of examples:
 $ {(x_i,y_i)}_{i=1}^N $  
 Where $ x_i $ is image and $ y_i $ is (integer) $ lable   
 Loss over the dataset is sum of loss over examples:
-$ L={\frac{1}{n} \sum_{i}L_i(f(x_i,W),y_i)} $  
+$ L=\frac{1}{n} \sum_{i}L_i(f(x_i,W),y_i) $  
 * To concrete loss function, there is a multi-class SVM loss.  
 It is a generalization of SVM to handle multiple classes.
 Given an example $(x_i,y_i)$ where $ x_i $ is the image and where $ y_i $ is the lable (integer), and using the shorthand for the score vector: $ s=f(x_i,W) $  
