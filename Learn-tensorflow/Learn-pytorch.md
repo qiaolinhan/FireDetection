@@ -1,7 +1,7 @@
 # 60 Minutes Tutorial for Pytorch
 PyTorch is a Python-based library which facilitates building Deep Learning models and using them in various applications. But, it’s more than just another Deep Learning library, it’s a scientific computing package (as the official PyTorch docs state).  
 * linked with google collab.
-* Or download the notebook and run locally.
+* Or download the notebook and run locally.  
 The tutorial is broken out into 4 modules:
 1. What is pytorch-tensors and multiple syntaxes
 2. Autimatic differenciation
@@ -12,4 +12,5 @@ The tutorial is broken out into 4 modules:
 
 * maybe work on the jupyter lab
 
-deep learning works like millions of small calculation. CPU performs better on mroe complicated calculation; GPU - graphs - very small calculations. _This is the reason why we run on GPU_ 
+deep learning works like millions of small calculation. CPU performs better on mroe complicated calculation; GPU - graphs - very small calculations.` _This is the reason why we run on GPU_`
+
