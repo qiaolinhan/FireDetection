@@ -8,8 +8,8 @@ The tutorial is broken out into 4 modules:
 3. training the neural network
 4. get to use in real life example-training classifier 
 
-* #CLOULD# Linode.com/sentdex which has the best cloud GPU price
+* _CLOULD_ Linode.com/sentdex which has the best cloud GPU price
 
 * maybe work on the jupyter lab
 
-deep learning works like millions of small calculation. CPU performs better on mroe complicated calculation; GPU - graphs - very small calculations. # This is the reason why we run on GPU # 
+deep learning works like millions of small calculation. CPU performs better on mroe complicated calculation; GPU - graphs - very small calculations. _This is the reason why we run on GPU_ 
