@@ -34,4 +34,36 @@ plt.plot(y)
 plt.show()'''
 ```
 ## Data input to neural network
+* in jupyter lab  
+`torch` comes with a bunch of data sets, `torchvison` is a collection of data that is used for vision  
+Most of ourtime is going to be -- **getting data, preparing data, formatting data** in such a way that's gonna work with a neural network.  
+Another thing we need to do is **banching**.
+* It is important to seperate training data sets and a test data set as soon as possible.  
+We need to convert data to tensor, so there is a `transforms.ToTensor()`
+```python
+import torch
+import torchvision
+from torchvision import transforms, datasets
+import matplotlib.pyplot as plt
 
+# define our two major data sets: training data set and testing data set
+# testing data should be an out-of-sample testing data
+train = datasets.MNIST("", train=True, download=True,
+                       transform=transforms.Compose([transforms.ToTensor()]))
+# in [] we paste all the transforms we want to apply to data
+test = datasets.MNIST("", train=False, download=True, transform=transforms.Compose([transforms.ToTensor()]))
+
+trainset = torch.utils.data.DataLoader(train, batch_size=10, shuffle=True)
+# batch=how many we want to pass to model at a time, usually between 8 and 64, bigger=faster.
+testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=True)
+
+for data in trainset:
+    print(data)
+    break
+# x, y = data[0][0], data[1][0]
+# print(y)
+print(data[0][0].shape)
+# we find that the image is not a typical, because it's 1*28*28
+plt.imshow(data[0][0].view(28,28))
+plt.show()
+```
