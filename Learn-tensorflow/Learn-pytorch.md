@@ -86,7 +86,7 @@ for i in counter_dict:
 * data is more important than the NN
 
 ## Building Neural Network
-* do not forget the line ```python super().__init__()```
+* do not forget the line `super().__init__()`
 ```python
 class Net(nn.Module):
     def __init__(self):
@@ -98,4 +98,38 @@ class Net(nn.Module):
         self.fc3 = nn.Linear(64, 64)
         self.fc4 = nn.Linear(64, 10)  # the output neutrons, we have 0-9 ten outputs
 ```
-then we need to difine the way data passes through the layers, a simple way is the feed-forward NN, so we define the `forward`. 
+Then we need to difine the way data passes through the layers, a simple way is the feed-forward NN, so we define the `forward`. 
+```python
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.fc2(x)
+        x = self.fc3(x)
+        x = self.fc4(x)
+        return x
+```
+Then we need the activation function, so the code above changes into:
+```python
+    def forward(self, x):
+        x = F.relu(self.fc1(x))  # relu: rectified linear activation function
+        x = F.relu(self.fc2(x))
+        x = F.relu(self.fc3(x))
+        # use the softmax for multi-class
+        x = self.fc4(x)
+        return F.log_softmax(x, dim=1)
+```
+* It is possible to set different activation functions for per neuron. Not much we can see.  
+```python
+net = Net()
+print(net)
+
+X = torch.rand((28, 28))
+# print(X)
+X = X.view(-1, 28 * 28)  # -1 specifies that the input will be an unknown shape
+# output are the real predictions
+output = net(X)
+print(output)
+```
+
+## Deep learning with pytorch
+pass the lable data and actually train the model to hopefully be able to recognize whatever it is we are passing.  
+* **there are two concepts: loss and optimizer**
