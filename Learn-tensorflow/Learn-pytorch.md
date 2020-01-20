@@ -131,5 +131,10 @@ print(output)
 ```
 
 ## Deep learning with pytorch
-pass the lable data and actually train the model to hopefully be able to recognize whatever it is we are passing.  
+pass the lable data and actually train the model to hopefully be able to recognize whatever it is we are passing.
 * **there are two concepts: loss and optimizer**
+* loss: how wrong is the modle, some degree of error is there
+```python
+import torch.optim as optim
+
+optimizer = optim.Adam()
