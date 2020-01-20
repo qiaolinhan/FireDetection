@@ -67,3 +67,35 @@ print(data[0][0].shape)
 plt.imshow(data[0][0].view(28,28))
 plt.show()
 ```
+Let the model to learn to decrease the loss quickly, the loss is measured from the output of the NN.
+* A way to confirm a dataset balance is to make a `couner`. 
+```python
+total = 0
+counter_dict = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+
+for data in trainset:
+    Xs, ys = data
+    for y in ys:
+        counter_dict[int(y)] += 1
+        total += 1
+print(counter_dict)
+
+for i in counter_dict:
+    print(f"{i}:{counter_dict[i] / total * 100}")  # percentage of the distribution
+```
+* data is more important than the NN
+
+## Building Neural Network
+* do not forget the line ```python super().__init__()```
+```python
+class Net(nn.Module):
+    def __init__(self):
+        # first we need to initialize an end module
+        super().__init__()
+        self.fc1 = nn.Linear(28 * 28, 64)
+        # fully connected layer 1, make a three layers of 64 neuron for the hidden layers
+        self.fc2 = nn.Linear(64, 64)
+        self.fc3 = nn.Linear(64, 64)
+        self.fc4 = nn.Linear(64, 10)  # the output neutrons, we have 0-9 ten outputs
+```
+then we need to difine the way data passes through the layers, a simple way is the feed-forward NN, so we define the `forward`. 
