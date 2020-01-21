@@ -136,5 +136,29 @@ pass the lable data and actually train the model to hopefully be able to recogni
 * loss: how wrong is the modle, some degree of error is there
 ```python
 import torch.optim as optim
+from data_learn import *
+from buildingNN_learn import *
 
-optimizer = optim.Adam()
+optimizer = optim.Adam(net.parameters(), lr=0.001)  # learning rate=0.001, * decaying learning rate
+# Actually we do not optimize for accuracy, we optimize for loss, it just happens that accuracy follows.
+EPOCH = 3
+for epoch in range(EPOCH):
+    for data in trainset:
+        # data is a batch of features and labels
+        X, y = data
+        # print(X[0])
+        # print(y[0])
+        # break
+        net.zero_grad()  # zero the gradients so that only one batch pass because of the very weak GPU or CPU
+        output = net(X.view(-1, 28*28))
+        loss = F.nll_loss(output, y)
+        loss.backward()
+        optimizer.step()
+    print(loss)
+```
+We want to iterate pass our data though the model, **a full pass through our data is what is called an epoch**  
+There two major ways to calculate loss:
+* one-hot vectors, we use squared mean error
+* if our data set is a scalar value, not a vector, just use `nll_loss`.
+
+## Convnet introduction
