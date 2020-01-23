@@ -162,6 +162,7 @@ There two major ways to calculate loss:
 * if our data set is a scalar value, not a vector, just use `nll_loss`.
 
 ## 5. Convnet introduction
+In the example, search "cat vs dog" in Google to download.  
 2D images --> pixels --> apply these convolutions kernels --> sliding the kernel window over the entire image --> pooling window max or everage
 * the goal of convolution is to locate the images
 * NN works on numbers , not strings, not slants  
