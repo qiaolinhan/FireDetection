@@ -162,4 +162,69 @@ There two major ways to calculate loss:
 * if our data set is a scalar value, not a vector, just use `nll_loss`.
 
 ## 5. Convnet introduction
-2D images $rightarrow$ pixels
+2D images --> pixels --> apply these convolutions kernels --> sliding the kernel window over the entire image --> pooling window max or everage
+* the goal of convolution is to locate the images
+* NN works on numbers , not strings, not slants  
+**The 1st layer of coonvolution kernels is to find the edges, curves or corner, then the next layer finds more complex features that edges, curves or corners build (combinations-->circles, sqaures), then next layer finds the combination of circles and square**
+```python
+import numpy as np
+import os
+import cv2
+from tqdm import tqdm
+import matplotlib.pyplot as plt
+
+# REBUILD_DATA = True
+REBUILD_DATA = False
+
+
+class DogsVSCats():
+    IMG_SIZE = 50
+    CATS = "PetImages/Cat"
+    DOGS = "PetImages/Dog"
+    LABLES = {CATS: 0, DOGS: 1}
+
+    training_data = []
+    catcount = 0
+    dogcount = 0
+
+    def make_training_data(self):
+        for label in self.LABLES:
+            print(label)
+            for f in tqdm(os.listdir(label)):
+                try:
+                    path = os.path.join(label, f)
+                    img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+                    img = cv2.resize(img, (self.IMG_SIZE, self.IMG_SIZE))
+                    self.training_data.append([np.array(img), np.eye(2)[self.LABLES[label]]])
+
+                    if label == self.CATS:
+                        self.catcount += 1
+                    elif label == self.DOGS:
+                        self.dogcount += 1
+
+                except Exception as e:
+                    pass
+                    print(str(e))
+
+        np.random.shuffle(self.training_data)
+        np.save("training_data.npy", self.training_data)
+        print("Cats:", self.catcount)
+        print("Dogs:", self.dogcount)
+
+
+if REBUILD_DATA:
+    dogsvcats = DogsVSCats()
+    dogsvcats.make_training_data()
+
+training_data = np.load("training_data.npy", allow_pickle=True)
+print(len(training_data))
+
+plt.imshow(training_data[0][0], cmap="gray")
+plt.show()
+
+print(training_data[0][0])
+```
+
+## 6. Convolution layer and batching data
+
+
