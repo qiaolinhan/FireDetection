@@ -14,7 +14,7 @@ The tutorial is broken out into 4 modules:
 
 deep learning works like millions of small calculation. CPU performs better on mroe complicated calculation; GPU - graphs - very small calculations.` _This is the reason why we run on GPU_`
 
-## Introduction
+## 1. Introduction
 ```python
 print ('hello world!')
 import torch
@@ -33,7 +33,7 @@ x.shape
 plt.plot(y)
 plt.show()'''
 ```
-## Data input to neural network
+## 2. Data input to neural network
 * in jupyter lab  
 `torch` comes with a bunch of data sets, `torchvison` is a collection of data that is used for vision  
 Most of ourtime is going to be -- **getting data, preparing data, formatting data** in such a way that's gonna work with a neural network.  
@@ -85,7 +85,7 @@ for i in counter_dict:
 ```
 * data is more important than the NN
 
-## Building Neural Network
+## 3. Building Neural Network
 * do not forget the line `super().__init__()`
 ```python
 class Net(nn.Module):
@@ -130,7 +130,7 @@ output = net(X)
 print(output)
 ```
 
-## Deep learning with pytorch
+## 4. Deep learning with pytorch
 pass the lable data and actually train the model to hopefully be able to recognize whatever it is we are passing.
 * **there are two concepts: loss and optimizer**
 * loss: how wrong is the modle, some degree of error is there
@@ -161,4 +161,5 @@ There two major ways to calculate loss:
 * one-hot vectors, we use squared mean error
 * if our data set is a scalar value, not a vector, just use `nll_loss`.
 
-## Convnet introduction
+## 5. Convnet introduction
+2D images $rightarrow$ pixels
