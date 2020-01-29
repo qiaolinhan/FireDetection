@@ -78,4 +78,4 @@ plt.xlabel('Epoch')
 plt.grid()
 plt.show()
 ```
-[![](/FireDetection/Learn-tensorflow/imgs/LR loss-epoch.png)]
+[![](/imgs/LR loss-epoch.png)]
