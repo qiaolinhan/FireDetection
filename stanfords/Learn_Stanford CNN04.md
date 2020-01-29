@@ -44,6 +44,8 @@ Eg: $ f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}} $
 Q: What is the **max** gate?  
 Q: What is the **multiplication** gate?
 
-**Chain Rule:** $\frac{\partial f}{\partial X} = \sum_i{\frac{partial f}{\partial q_i} \frac{partial q_i}{\partial X}}$
+**Chain Rule:** $\frac{\partial f}{\partial X} = \sum_i{\frac{\partial f}{\partial q_i} \frac{\partial q_i}{\partial X}}$  
+
+
 
             
