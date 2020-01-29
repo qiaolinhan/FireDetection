@@ -1,14 +1,17 @@
 # Lecture 4
 Backpropagation and Neural Networks 
-
+How to Compute the gradients we need for arbitrarily complex functions
 #### Recall
 * score: $ s=f(x;W)=Wx $  
-* SVM loss: $ L_i=\sum_{j\neq y_i}max(0,s_j-s_{y_i}+1) $  
+
+* SVM loss: $ L_i=\sum_{j\neq y_i}max(0,s_j-s_{y_i}+1) $ 
+
 * data loss+ regularization: $ L=\frac{1}{N}\sum_{i=1}{N}Li+\sum_kW_k^2 $  
 we want $ \bigtriangledown_WL $, we want to find the parameters _W_.  
 
 ###### Gradient Decent
-$ df(x)/dx=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} $  
+$ df(x)/dx=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} $
+
 * Numerical gradient: slow, approximate, but easy to write.  
 * Analitic gradient: error-prone, but fast and exact.  
 Practice: derive analytic gradient, check your implementation with numerical gradient  
@@ -38,6 +41,9 @@ Eg: $ f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}} $
 
 ##### Patterns in backward flow
 * *add gate*: gradient distributor  
-Q: What is the max gate?  
+Q: What is the **max** gate?  
+Q: What is the **multiplication** gate?
+
+**Chain Rule:** $\frac{\partial f}{\partial X} = \sum_i{\frac{partial f}{\partial q_i} \frac{partial q_i}{\partial X}}$
 
             
