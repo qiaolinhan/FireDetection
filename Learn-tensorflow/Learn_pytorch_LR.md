@@ -78,4 +78,4 @@ plt.xlabel('Epoch')
 plt.grid()
 plt.show()
 ```
-[![](/imgs/LR loss-epoch.png)]
+[![](/imgs/LR.png)]
