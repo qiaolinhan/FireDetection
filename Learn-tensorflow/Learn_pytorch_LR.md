@@ -1,5 +1,5 @@
 ```python
-!pip install torch
+!pip3 install torch
 
 import torch
 import torch.nn as nn
