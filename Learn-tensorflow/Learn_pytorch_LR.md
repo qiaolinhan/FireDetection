@@ -1,4 +1,6 @@
 ```python
+!pip install torch
+
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
@@ -78,4 +80,4 @@ plt.xlabel('Epoch')
 plt.grid()
 plt.show()
 ```
-[![](/imgs/LR.png)]
+[![](/FireDetection/Learn-tensorflow/imgs/LR.png)]
