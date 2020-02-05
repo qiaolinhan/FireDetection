@@ -1,14 +1,14 @@
 https://link.springer.com/content/pdf/10.1007%2F978-3-030-16184-2_24.pdf
-
+# Automatic WFD Based on ML and Image Analysis Pipline
 Author: Joao Alves, Christophe Soares, etc.
 
-# Abstract
+## Abstract
 Detect forest fire in early stage.\
 To detect the presence of smoke or flame.\
 To produce an estimation of the area under ignotion so that its size  can be evaluateed.\
 The organized dataset, composed by 882 images, was associated with relevant image metadata.
 
-# 1. Introduction
+## 1. Introduction
 Overall in crease in temperature by $2^oC$ cause higher level of dryness in the environment.\
 Among the available fire detection techniques, we emphasize the use of video cameras as **input source**.  
 * Aim: identifing a fire situation.
@@ -20,10 +20,10 @@ of discriptors return s unique properties that characterize an image by mean of 
 * The obtained descriptors are then used to train a ML classifier.
 * After obtaining a fire classification, the pipline focuses on spotting the image areas with flames, through the application of CV.
 
-# 2. State of Art
+## 2. State of Art
 Projects that propose the use of mobile or static video camera in fire detection.\
 (1) based on CV techniques, only seek to detect flames or smoke; (2) using DL techniques, no such restriction.
-## 2.1 DL in Fire Detection (FD)
+### 2.1 DL in Fire Detection (FD)
 Best choice of optimizers, reduction functions and learning rate: Inception-V3. *Adam* optimizer, *reduce max* function and *0.1* learning rate. [6] \
 Two CNN to improve detection accuracy by fine-tuning the fully connected layers of both. VGG16 and Res-Net50, accuracy improvement **1%**. [7] \
 Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and modified VGG13. Concluded that: Goole-Net > modified VGG13 > others.
@@ -33,7 +33,7 @@ Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and mod
 High Achievement, What's next?
 ```
 
-## 2.2 CV System in Fire Detection
+### 2.2 CV System in Fire Detection
 **Flame Detection:** \
 [9] uitable for daytime scenarios and is **intended to be applied to drones**. Used a new color index called FFDI.  
 [10] By manipulating RGB and YCrCb color spaces. Algorithms consists of seven rules to be applied sequentially.  
@@ -44,13 +44,22 @@ High Achievement, What's next?
 [14] static surveillance cameras. SVM classification.  
 ![CV detections](/CVdetections.png)
 
-# 3. Implementation of the Fire Detection Pipeline
+## 3. Implementation of the Fire Detection Pipeline
 Aim: fulfill in sequence.    
 (1) to correctly recognize and classify a fire situation.  
 (2) to detect the flame areas present in the image classified with fire.
-## 3.1 Dataset Description and Organization
-a varied of images was collected and selected to cover a range of real wrld scenarios.
-
+### 3.1 Dataset Description and Organization
+a varied of images was collected and selected to cover a range of real world scenarios.
+In order to keep track of all these variants, a **metadata** set of information was created, containing all characteristics associated to each image.
+![metadata](/metadata.png)
+### 3.2 System Pipeline
+A pile adn filter architecture with three sequential modules.  
+Images aquaired $\rightarrow$ analyzed in sequence by the feature extraction module $\rightarrow$ classification.  
+Flames are not always visible and detectable, which in such cases, leads to the conclusion that the fire was detected due to the presence of smoke.  
+### 3.3 Feature Extraction
+Inception-V3 which output vector serves
+### 3.4 Classification
+It follows the descriptor extraction module, receiving as input the 2048 descriptors of each image.
 
 
 
