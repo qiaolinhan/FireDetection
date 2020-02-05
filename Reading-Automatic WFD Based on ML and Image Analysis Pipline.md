@@ -28,6 +28,9 @@ Best choice of optimizers, reduction functions and learning rate: Inception-V3. 
 Two CNN to improve detection accuracy by fine-tuning the fully connected layers of both. VGG16 and Res-Net50, accuracy improvement **1%**. [7] \
 Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and modified VGG13. Concluded that: Goole-Net > modified VGG13 > others.
 ![comparing different DNNs](/comparing.png)
+
+<span style="color:red">High Achievement, What's next?</span>  
+
 ## 2.2 CV System in Fire Detection
 **Flame Detection:** \
 [9] uitable for daytime scenarios and is **intended to be applied to drones**. Used a new color index called FFDI.  
@@ -44,7 +47,7 @@ Aim: fulfill in sequence.
 (1) to correctly recognize and classify a fire situation.  
 (2) to detect the flame areas present in the image classified with fire.
 ## 3.1 Dataset Description and Organization
-
+a varied of images was collected and selected to cover a range of real wrld scenarios.
 
 
 
