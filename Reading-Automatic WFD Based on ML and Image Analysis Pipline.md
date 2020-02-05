@@ -29,7 +29,9 @@ Two CNN to improve detection accuracy by fine-tuning the fully connected layers 
 Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and modified VGG13. Concluded that: Goole-Net > modified VGG13 > others.
 ![comparing different DNNs](/comparing.png)
 
-<span style="color:red">High Achievement, What's next?</span>  
+```
+High Achievement, What's next?
+```
 
 ## 2.2 CV System in Fire Detection
 **Flame Detection:** \
