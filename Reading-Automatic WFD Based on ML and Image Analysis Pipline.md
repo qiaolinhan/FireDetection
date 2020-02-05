@@ -42,7 +42,7 @@ High Achievement, What's next?
 [12] Color and motion analysis. rapid detection in daytime scenarios; allow multi-camera signal processing without large computational complexties. The detection process involves signal preprocessing, feature extraction and classification.  
 [13] The segmentation of zones with movement, extraction of characteristics of the smoke and, finally, a classifier. ** Visual Background Extracor** method is used. Detection based on **High Frequency energy** (wave transformation).  
 [14] static surveillance cameras. SVM classification.  
-![CV detections](/FireDetection/CV detections.png)
+![CV detections](/CVdetections.png)
 
 # 3. Implementation of the Fire Detection Pipeline
 Aim: fulfill in sequence.    
