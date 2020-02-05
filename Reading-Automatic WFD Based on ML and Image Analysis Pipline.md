@@ -27,7 +27,13 @@ Projects that propose the use of mobile or static video camera in fire detection
 Best choice of optimizers, reduction functions and learning rate: Inception-V3. *Adam* optimizer, *reduce max* function and *0.1* learning rate. [6]\
 Two CNN to improve detection accuracy by fine-tuning the fully connected layers of both. VGG16 and Res-Net50, accuracy improvement **1%**. [7]\
 Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and modified VGG13. Concluded that: Goole-Net > modified VGG13 > others.
-![comparing different DNNs](/comparing.png =50%)
+![comparing different DNNs](/comparing.png)
+## 2.2 CV System in Fire Detection
+**Flame Detection:**\ 
+Suitable for daytime scenarios and is **intended to be applied to drones**. Used a new color index called FFDI [9].\
+By manipulating RGB and YCrCb color spaces. Algorithms consists of seven rules to be applied sequentially [10].\
+To improve the accuracy on fixed surveillance cameras. Two parallel image streams, one for detection and the other for confirmation of the  results. [11]\
+**Smoke Detection:**\
 
 
 
