@@ -10,7 +10,7 @@ The organized dataset, composed by 882 images, was associated with relevant imag
 
 # 1. Introduction
 Overall in crease in temperature by $2^oC$ cause higher level of dryness in the environment.\
-Among the available fire detection techniques, we emphasize the use of video cameras as **input source**.\
+Among the available fire detection techniques, we emphasize the use of video cameras as **input source**. \
 * Aim: identifing a fire situation.
 * Requires: 2 initial steps
   * 1. extraction of image descriptors
@@ -30,10 +30,12 @@ Five DCNNs are studied: Alex-Net, Google-Net, modified Google-Net, VGG13 and mod
 ![comparing different DNNs](/comparing.png)
 ## 2.2 CV System in Fire Detection
 **Flame Detection:** \
-Suitable for daytime scenarios and is **intended to be applied to drones**. Used a new color index called FFDI [9].\
-By manipulating RGB and YCrCb color spaces. Algorithms consists of seven rules to be applied sequentially [10].\
-To improve the accuracy on fixed surveillance cameras. Two parallel image streams, one for detection and the other for confirmation of the  results. [11]\
-**Smoke Detection:** \
+[9] uitable for daytime scenarios and is **intended to be applied to drones**. Used a new color index called FFDI \
+[10] By manipulating RGB and YCrCb color spaces. Algorithms consists of seven rules to be applied sequentially \
+[11] To improve the accuracy on fixed surveillance cameras. Two parallel image streams, one for detection and the other for confirmation of the  results. \
+**Smoke Detection:**  
+[12] color and motion analysis. rapid detection in daytime scenarios; allow multi-camera signal processing without large computational complexties. The detection process involves signal preprocessing, feature extraction and classification.  
+[13] 
 
 
 
