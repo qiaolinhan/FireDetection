@@ -60,7 +60,10 @@ Flames are not always visible and detectable, which in such cases, leads to the 
 Inception-V3 which output vector serves
 ### 3.4 Classification
 It follows the descriptor extraction module, receiving as input the 2048 descriptors of each image.
-
+* Logistic Regression (LR) offed the better performance.
+* Use seperated classifiers for day and night images.
+### 3.5 Flame Area Estimation
+[15] Developed CAFE project. 
 
 
 
