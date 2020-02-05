@@ -7,3 +7,7 @@ Hope this repository can be applied on the quadrotor and combine with flight con
 3. consider the combination with the flight control of Drones
 
 * purpose: To detectt wildfire, smoke segementation
+
+02-04-2020:
+For smoke semantic segmentation, FCN, U-Net, and Seg-Net can be used.\\
+Rough set and color character can be combined to use. **UKF** can be used to update the background.
