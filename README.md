@@ -6,7 +6,7 @@ Hope this repository can be applied on the quadrotor and combine with flight con
 2. consider the two-stream DNN for action and motion detection
 3. consider the combination with the flight control of Drones
 
-* purpose: To detectt wildfire, smoke segementation
+* purpose: To detect wildfire, smoke segementation
 
 02-04-2020:
 For smoke semantic segmentation, FCN, U-Net, and Seg-Net can be used.\\
