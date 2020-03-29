@@ -11,3 +11,6 @@ Hope this repository can be applied on the quadrotor and combine with flight con
 02-04-2020:
 For smoke semantic segmentation, FCN, U-Net, and Seg-Net can be used.\\
 Rough set and color character can be combined to use. **UKF** can be used to update the background.
+
+03-029-2020：
+Preparing to add the Q learning & Reinforcementlearning for Dornes.
