@@ -17,4 +17,4 @@ Preparing to add the Q learning & Reinforcementlearning for Dornes.
 
 03-31-2020:
 changed the learningrate picking method with the help of fast.ai: https://course.fast.ai/videos/?lesson=5 46:30, method of Sylvian. The ACC increased from 85% to 89%.  
-Nest step is going to separate the fog and smoke.
+Next step is going to separate the fog and smoke.
