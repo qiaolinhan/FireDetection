@@ -19,5 +19,5 @@ Preparing to add the Q learning & Reinforcementlearning for Dornes.
 Changed the learningrate picking method in `Smokesegmentation1.ipynb` with the help of fast.ai: https://course.fast.ai/videos/?lesson=5 46:30, method of Sylvian. The ACC increased from 85% to 89%.  
 Next step is going to separate the fog and smoke.  
 
-04-04-2020:  
+04-04-2020:
 New package `Pythonrobotic` may be used. Pathplanning:grid algorithm or A star algorithm.
