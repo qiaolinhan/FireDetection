@@ -80,4 +80,4 @@ plt.xlabel('Epoch')
 plt.grid()
 plt.show()
 ```
-<img scr="https://github.com/qiaolinhan/FireDetection/blob/master/Learn-tensorflow/imgs/LR.png" width="400" height="400">
+<img src="https://github.com/qiaolinhan/FireDetection/blob/master/Learn-tensorflow/imgs/LR.png?raw=true" width="400" height="400">
